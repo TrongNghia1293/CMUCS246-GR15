@@ -24,7 +24,9 @@ public class Maybayvip extends javax.swing.JFrame {
      */
     public Maybayvip() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,6 +49,8 @@ public class Maybayvip extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         lblKQ = new javax.swing.JLabel();
+        xnve = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,17 +111,27 @@ public class Maybayvip extends javax.swing.JFrame {
             }
         });
 
+        xnve.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        xnve.setText("Xác Nhận Vé");
+        xnve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xnveActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Đăng Xuất");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,20 +144,35 @@ public class Maybayvip extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(from, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(64, 64, 64)
+                                        .addGap(96, 96, 96)
                                         .addComponent(jLabel4))
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(soluong)
                                     .addComponent(to, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(203, 203, 203)
-                        .addComponent(jLabel9)))
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jButton1)))
                 .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(xnve)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(102, 102, 102))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,7 +197,11 @@ public class Maybayvip extends javax.swing.JFrame {
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addComponent(lblKQ)
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addGap(55, 55, 55)
+                .addComponent(xnve)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addGap(51, 51, 51))
         );
 
         pack();
@@ -200,14 +233,14 @@ public class Maybayvip extends javax.swing.JFrame {
         return;
     }
     else{bangtimkiem tien = new bangtimkiem();
-        tien.setVisible(true);}
+        tien.setVisible(true);
+        setVisible(false);}
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     String fromLocation = (String) from.getSelectedItem();
     String toLocation = (String) to.getSelectedItem();
-    String vehicle = (String) jComboBox1.getSelectedItem();
-
+    String vehicle = (String) jComboBox1.getSelectedItem(); 
     // In ra các giá trị để kiểm tra
     System.out.println("fromLocation: " + fromLocation);
     System.out.println("toLocation: " + toLocation);
@@ -270,7 +303,6 @@ public class Maybayvip extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Không thể xác định giá vé cho tuyến đường này.", "Lỗi", JOptionPane.ERROR_MESSAGE);
         return;
     }
-
     int totalPrice = price * ticketQuantity;
     String message = "Phương tiện: " + vehicle +
                      "\nĐi từ: " + fromLocation +
@@ -280,7 +312,21 @@ public class Maybayvip extends javax.swing.JFrame {
                      "\nTổng tiền: " + totalPrice;
 
     lblKQ.setText("<html>" + message.replaceAll("\n", "<br>") + "</html>");
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void xnveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xnveActionPerformed
+        int choice = JOptionPane.showConfirmDialog(null, "Xác Nhận Vé Bạn Đã Chọn !!", "Xác nhận", JOptionPane.YES_NO_OPTION);
+        if ( choice == JOptionPane.YES_OPTION) {
+            JOptionPane.showMessageDialog(null, "Thành công!");
+        }
+    }//GEN-LAST:event_xnveActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        DangNhap dn = new DangNhap();
+        dn.setVisible(true);
+        setVisible(false);
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -322,6 +368,7 @@ public class Maybayvip extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> from;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -331,5 +378,6 @@ public class Maybayvip extends javax.swing.JFrame {
     private javax.swing.JLabel lblKQ;
     private javax.swing.JTextField soluong;
     private javax.swing.JComboBox<String> to;
+    private javax.swing.JButton xnve;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,6 +15,7 @@ public class bangtimkiem extends javax.swing.JFrame {
      */
     public bangtimkiem() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

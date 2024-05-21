@@ -17,6 +17,7 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -115,7 +116,9 @@ public class main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        
+        DangNhap dn = new DangNhap();
+        dn.setVisible(true);
+        setVisible(false);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
