@@ -161,6 +161,7 @@ public class DangNhap extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Admin WELCOME");
                 main m = new main();
                 m.setVisible(true);
+                setVisible(false);
                 m.setLocationRelativeTo(null);
                 dispose(); 
         }

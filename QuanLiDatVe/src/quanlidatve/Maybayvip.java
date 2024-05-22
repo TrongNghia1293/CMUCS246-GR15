@@ -312,7 +312,8 @@ public class Maybayvip extends javax.swing.JFrame {
                      "\nTổng tiền: " + totalPrice;
 
     lblKQ.setText("<html>" + message.replaceAll("\n", "<br>") + "</html>");
-
+            hoadonve hd = new hoadonve();
+            hd.saveInvoice(message);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void xnveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xnveActionPerformed
@@ -320,6 +321,10 @@ public class Maybayvip extends javax.swing.JFrame {
         if ( choice == JOptionPane.YES_OPTION) {
             JOptionPane.showMessageDialog(null, "Thành công!");
         }
+        hoadonve hd = new hoadonve();
+        hd.setVisible(true);
+        setVisible(false);
+        
     }//GEN-LAST:event_xnveActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
